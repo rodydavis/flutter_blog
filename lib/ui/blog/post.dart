@@ -39,7 +39,7 @@ class _PostDetailsState extends State<PostDetails> {
     // } else {
     //   _updateTitle();
     // }
-    rootBundle.loadString("${_post.path}.md").then((data) {
+    rootBundle.loadString(_post.path).then((data) {
       if (mounted)
         setState(() {
           _html = data;
