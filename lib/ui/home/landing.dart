@@ -69,26 +69,6 @@ class _LandingScreenState extends State<LandingScreen> {
               ),
             ),
           ),
-          Container(
-            margin: EdgeInsets.all(40.0),
-            child: Center(
-              child: Container(
-                height: 450,
-                width: dimens.maxWidth * 0.6,
-                child: FrameRender(
-                  direction: Axis.horizontal,
-                  child: Container(
-                    color: Colors.grey[300],
-                    child: AppsRender(
-                      shrinkWrap: false,
-                      scrollDirection: Axis.vertical,
-                      appLauncher: true,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
         ],
       ),
     );

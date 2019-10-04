@@ -43,7 +43,6 @@ class _MyAppState extends State<MyApp> {
         BlocProvider<AuthBloc>(builder: (_) => _auth),
         BlocProvider<SettingsBloc>(builder: (_) => _settingsBloc),
         BlocProvider<BlogBloc>(builder: (_) => BlogBloc()),
-        BlocProvider<AppsBloc>(builder: (_) => AppsBloc()),
       ],
       child: BlocListener<SettingsBloc, SettingsState>(
         listener: (context, state) {
@@ -55,7 +54,6 @@ class _MyAppState extends State<MyApp> {
           listener: (context, state) {
             if (state is LoggedInState) {
               BlocProvider.of<BlogBloc>(context).dispatch(LoadPosts());
-              BlocProvider.of<AppsBloc>(context).dispatch(CheckApps());
             }
             if (state is LoggedOutState) {
               BlocProvider.of<AuthBloc>(context).dispatch(LoginGuest());
