@@ -44,7 +44,8 @@ class _PianoFinalDemoState extends State<PianoFinalDemo> {
                   min: 0.0,
                   max: 1.0,
                   value: _widthRatio,
-                  onChanged: (double value) => setState(() => _widthRatio = value)),
+                  onChanged: (double value) =>
+                      setState(() => _widthRatio = value)),
               Divider(),
               ListTile(
                   title: Text("Show Labels"),

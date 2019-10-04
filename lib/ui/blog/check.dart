@@ -14,8 +14,8 @@ class BlogCheck extends StatelessWidget {
     return BlocBuilder<BlogBloc, BlogState>(
       builder: (context, state) {
         if (state is PostsReady) {
-          final post =
-              state.posts.firstWhere((p) => p.slug == '/blog/$route', orElse: () => null);
+          final post = state.posts
+              .firstWhere((p) => p.slug == '/blog/$route', orElse: () => null);
           if (post != null) {
             return PostDetails(slug: post.slug, post: post);
           } else {

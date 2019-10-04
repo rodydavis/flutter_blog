@@ -170,7 +170,8 @@ class Extensions {
   static List<TextDecoration> _getDecorationList(TextDecoration decoration) {
     final List<TextDecoration> decorationList = <TextDecoration>[];
 
-    if (decoration == null) {} else if (decoration == TextDecoration.none) {
+    if (decoration == null) {
+    } else if (decoration == TextDecoration.none) {
       decorationList.add(TextDecoration.none);
     } else {
       if (decoration.contains(TextDecoration.underline))

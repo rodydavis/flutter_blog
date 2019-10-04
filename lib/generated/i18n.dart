@@ -22,43 +22,56 @@ class I18n implements WidgetsLocalizations {
   }
 
   static const GeneratedLocalizationsDelegate delegate =
-    const GeneratedLocalizationsDelegate();
+      const GeneratedLocalizationsDelegate();
 
   /// function to be invoked when changing the language
   static LocaleChangeCallback onLocaleChanged;
 
   static I18n of(BuildContext context) =>
-    Localizations.of<I18n>(context, WidgetsLocalizations);
+      Localizations.of<I18n>(context, WidgetsLocalizations);
 
   @override
   TextDirection get textDirection => TextDirection.ltr;
 
   /// "Rody Davis"
   String get title => "Rody Davis";
+
   /// "Never Stop Learning"
   String get tag_line => "Never Stop Learning";
+
   /// "Ok"
   String get ok => "Ok";
+
   /// "Cancel"
   String get cancel => "Cancel";
+
   /// "Settings"
   String get settingsTitle => "Settings";
+
   /// "Dark Mode"
   String get settingsDarkMode => "Dark Mode";
+
   /// "System Brightness"
   String get settingsUseSystem => "System Brightness";
+
   /// "About"
   String get aboutTitle => "About";
+
   /// "Apps"
   String get appsTitle => "Apps";
+
   /// "Projects"
   String get projectsTitle => "Projects";
+
   /// "Blog"
   String get blogTitle => "Blog";
+
   /// "Image Source"
   String get blogImage_source => "Image Source";
+
   /// "Home"
   String get homeTitle => "Home";
+
   /// "Privacy Policy"
   String get privacy_policy => "Privacy Policy";
 }
@@ -70,12 +83,11 @@ class _I18n_en_US extends I18n {
   TextDirection get textDirection => TextDirection.ltr;
 }
 
-class GeneratedLocalizationsDelegate extends LocalizationsDelegate<WidgetsLocalizations> {
+class GeneratedLocalizationsDelegate
+    extends LocalizationsDelegate<WidgetsLocalizations> {
   const GeneratedLocalizationsDelegate();
   List<Locale> get supportedLocales {
-    return const <Locale>[
-      const Locale("en", "US")
-    ];
+    return const <Locale>[const Locale("en", "US")];
   }
 
   LocaleResolutionCallback resolution({Locale fallback}) {
@@ -97,8 +109,7 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<WidgetsLocali
     final String languageCode = locale != null ? locale.languageCode : "";
     if ("en_US" == lang) {
       return new SynchronousFuture<WidgetsLocalizations>(const _I18n_en_US());
-    }
-    else if ("en" == languageCode) {
+    } else if ("en" == languageCode) {
       return new SynchronousFuture<WidgetsLocalizations>(const _I18n_en_US());
     }
 
