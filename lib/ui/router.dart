@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'auth/screen.dart';
 import 'blog/check.dart';
 import 'blog/screen.dart';
 import 'home/screen.dart';
@@ -30,7 +29,6 @@ class Router {
 
   static Map<String, WidgetBuilder> get routes {
     return {
-      LoginScreen.routeName: (_) => LoginScreen(),
       HomeScreen.routeName: (_) => HomeScreen(),
       AboutScreen.routeName: (_) => AboutScreen(),
       PrivacyPolicy.routeName: (_) => PrivacyPolicy(),

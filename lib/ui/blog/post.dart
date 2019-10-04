@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 
 import '../../data/classes/fb_post.dart';
 import '../../plugins/share/share.dart';
-import '../auth/admin_check.dart';
 import '../common/index.dart';
 
 class PostDetails extends StatefulWidget {
@@ -59,80 +58,50 @@ class _PostDetailsState extends State<PostDetails> {
         ),
       );
     }
-    return AdminCheck(
-      builder: (context, admin) => Scaffold(
-        // bottomNavigationBar: admin
-        //     ? BottomAppBar(
-        //         child: Row(
-        //           children: <Widget>[
-        //             IconButton(
-        //               icon: Icon(Icons.delete),
-        //               onPressed: () {
-        //                 FbFirestore.deleteDoc('posts/${widget.id}');
-        //                 Navigator.pop(context);
-        //               },
-        //             ),
-        //             IconButton(
-        //               icon: Icon(Icons.edit),
-        //               onPressed: () => navigate(
-        //                 context,
-        //                 EditPostScreen(post: _post, id: widget.id),
-        //                 fullScreen: true,
-        //               ).then((post) {
-        //                 if (post != null && mounted) {
-        //                   setState(() => _post = post);
-        //                   _updateTitle();
-        //                 }
-        //               }),
-        //             ),
-        //           ],
-        //         ),
-        //       )
-        //     : null,
-        body: NestedScrollView(
-          headerSliverBuilder: (context, innerBoxIsScrolled) {
-            return <Widget>[
-              SliverAppBar(
-                expandedHeight: 200.0,
-                floating: false,
-                pinned: true,
-                actions: <Widget>[
-                  IconButton(
-                    icon: Icon(Icons.share),
-                    onPressed: () => ShareUtils.share(
-                      title: _post.title,
-                      url: 'https://rodydavis.com/#/blog/${widget.slug}',
-                    ),
+    return Scaffold(
+      body: NestedScrollView(
+        headerSliverBuilder: (context, innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              expandedHeight: 200.0,
+              floating: false,
+              pinned: true,
+              actions: <Widget>[
+                IconButton(
+                  icon: Icon(Icons.share),
+                  onPressed: () => ShareUtils.share(
+                    title: _post.title,
+                    url: 'https://rodydavis.com/#/blog/${widget.slug}',
                   ),
-                ],
-                flexibleSpace: FlexibleSpaceBar(
-                    centerTitle: true,
-                    title: Text(_post.title, style: TextStyle(fontSize: 16.0)),
-                    background: Container(
-                      child: Stack(
-                        children: <Widget>[
-                          Positioned.fill(
-                            child: Image.network(
-                              _post.image,
-                              fit: BoxFit.cover,
-                            ),
+                ),
+              ],
+              flexibleSpace: FlexibleSpaceBar(
+                  centerTitle: true,
+                  title: Text(_post.title, style: TextStyle(fontSize: 16.0)),
+                  background: Container(
+                    child: Stack(
+                      children: <Widget>[
+                        Positioned.fill(
+                          child: Image.network(
+                            _post.image,
+                            fit: BoxFit.cover,
                           ),
-                          Positioned.fill(
-                            child: Container(
-                              color: Colors.black.withOpacity(0.3),
-                            ),
+                        ),
+                        Positioned.fill(
+                          child: Container(
+                            color: Colors.black.withOpacity(0.3),
                           ),
-                        ],
-                      ),
-                    )),
-              ),
-            ];
-          },
-          body: MediaQuery.removePadding(
-            context: context,
-            removeTop: true,
-            child: _getRender(),
-          ),
+                        ),
+                      ],
+                    ),
+                  )),
+            ),
+          ];
+        },
+        body: MediaQuery.removePadding(
+          context: context,
+          removeTop: true,
+          child: _getRender(),
         ),
       ),
     );
