@@ -69,6 +69,16 @@ flutter:
     - assets/images/favicon.ico
     - assets/images/google_play.png
     - assets/images/welcome.jpeg
+    # assets/posts/*
+    - assets/posts/2019_03_08_app_launch_space_curiosity.md
+    - assets/posts/2019_03_10_the_pitch_pipe.md
+    - assets/posts/2019_03_11_flutter_one_click_release.md
+    - assets/posts/2019_03_12_making_a_piano.md
+    - assets/posts/2019_03_15_automate_flutter_apps.md
+    - assets/posts/2019_09_06_one_codebase_many_places.md
+    # assets/pages/*
+    - assets/pages/about.md
+    - assets/pages/privacy_policy.md
     # assets-generator-end
     - assets/posts/
     - assets/images/apps/the_pitch_pipe/

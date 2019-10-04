@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../generated/i18n.dart';
+import '../../r.dart';
 import 'index.dart';
 
 class AboutScreen extends StatelessWidget {
@@ -10,7 +11,7 @@ class AboutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AssetPageRender(
       title: I18n.of(context).aboutTitle,
-      path: 'assets/pages/about',
+      path: R.assetsPagesAbout,
     );
   }
 }

@@ -15,7 +15,7 @@ class _AssetPageRenderState extends State<AssetPageRender> {
 
   @override
   void initState() {
-    rootBundle.loadString("${widget.path}.md").then((data) {
+    rootBundle.loadString(widget.path).then((data) {
       if (mounted)
         setState(() {
           _html = data;

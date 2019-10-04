@@ -14,8 +14,6 @@ class MarkdownRender extends StatelessWidget {
 
   final String _html;
 
-  get UriUtils => null;
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -29,8 +27,6 @@ class MarkdownRender extends StatelessWidget {
                     width: 900,
                     child: Html(
                       data: md.markdownToHtml(_html),
-                      //Optional parameters:
-                      // routes: Router.routes(blocState),
                       routes: {
                         // -- Demos --
                         TestDemo.routeName: (_) => TestDemo(),
@@ -43,26 +39,7 @@ class MarkdownRender extends StatelessWidget {
                       linkStyle: const TextStyle(color: Colors.redAccent),
                       onLinkTap: (url) => UrlUtils.open(url, name: 'Info'),
                       onImageTap: (src) => UrlUtils.open(src, name: 'Preview'),
-                      //Must have useRichText set to false for this to work.
                       useRichText: true,
-                      // customTextAlign: (dom.Node node) {
-                      //   if (node is dom.Element) {
-                      //     switch (node.localName) {
-                      //       case "p":
-                      //         return TextAlign.justify;
-                      //     }
-                      //   }
-                      // },
-                      // customTextStyle: (dom.Node node, TextStyle baseStyle) {
-                      //   if (node is dom.Element) {
-                      //     switch (node.localName) {
-                      //       case "p":
-                      //         return baseStyle
-                      //             .merge(TextStyle(height: 2, fontSize: 20));
-                      //     }
-                      //   }
-                      //   return baseStyle;
-                      // },
                     ),
                   ),
                 ),
