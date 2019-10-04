@@ -26,7 +26,7 @@ class _LandingScreenState extends State<LandingScreen> {
                     child: Text(
                       'Never Stop Learning'.toUpperCase(),
                       style: TextStyle(
-                        fontSize: 60,
+                        fontSize: 40,
                         fontWeight: FontWeight.w700,
                         color: Colors.white,
                       ),
