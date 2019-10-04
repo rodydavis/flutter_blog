@@ -19,21 +19,22 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final _auth = AuthBloc();
   final _observer = AppRouteObserver();
   final _settingsBloc = SettingsBloc();
-  final _auth = AuthBloc();
-  @override
-  void initState() {
-    _auth.dispatch(CheckUser());
-    _settingsBloc.dispatch(CheckSettings());
-    super.initState();
-  }
 
   @override
   void dispose() {
     _auth.dispose();
     _settingsBloc.dispose();
     super.dispose();
+  }
+
+  @override
+  void initState() {
+    _auth.dispatch(CheckUser());
+    _settingsBloc.dispatch(CheckSettings());
+    super.initState();
   }
 
   @override
