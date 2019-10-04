@@ -11,7 +11,6 @@ class AppTheme {
             borderRadius: BorderRadius.circular(20.0),
           ),
         ),
-        // iconTheme: IconThemeData(color: Colors.white),
         brightness: Brightness.light,
         appBarTheme: ThemeData.light().appBarTheme.copyWith(elevation: 1.0),
         bottomAppBarTheme:
@@ -26,7 +25,6 @@ class AppTheme {
 
   static PageTransitionsTheme _getTransition() {
     return PageTransitionsTheme(
-      // makes all platforms that can run Flutter apps display routes without any animation
       builders:
           Map<TargetPlatform, InanimatePageTransitionsBuilder>.fromIterable(
               TargetPlatform.values.toList(),
@@ -46,7 +44,6 @@ class AppTheme {
       );
 }
 
-/// This class is used to build page transitions that don't have any animation
 class InanimatePageTransitionsBuilder extends PageTransitionsBuilder {
   const InanimatePageTransitionsBuilder();
 
