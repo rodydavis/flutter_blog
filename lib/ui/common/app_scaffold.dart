@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../data/utils/constants.dart';
 import '../../generated/i18n.dart';
 import '../../plugins/url_launcher/url_launcher.dart';
-import '../apps/screen.dart';
 import '../auth/admin_check.dart';
 import '../blog/screen.dart';
 import '../home/screen.dart';
@@ -40,8 +39,8 @@ class AppScaffold extends StatelessWidget {
           FontAwesomeIcons.twitter,
           size: _iconSize,
         ),
-        onTap: () => UrlUtils.open('https://twitter.com/rodydavis',
-            name: 'Rody Davis'),
+        onTap: () =>
+            UrlUtils.open('https://twitter.com/rodydavis', name: 'Rody Davis'),
       ),
       Container(width: 12.0),
       InkWell(
@@ -104,11 +103,6 @@ class AppScaffold extends StatelessWidget {
                                       child: Text(I18n.of(context).homeTitle),
                                       onPressed: () => Navigator.pushNamed(
                                           context, HomeScreen.routeName),
-                                    ),
-                                    MenuButtonText(
-                                      child: Text(I18n.of(context).appsTitle),
-                                      onPressed: () => Navigator.pushNamed(
-                                          context, AppsScreen.routeName),
                                     ),
                                     MenuButtonText(
                                       child: Text(I18n.of(context).blogTitle),

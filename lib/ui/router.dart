@@ -1,8 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'apps/check.dart';
-import 'apps/screen.dart';
 import 'auth/screen.dart';
 import 'blog/check.dart';
 import 'blog/screen.dart';
@@ -24,13 +22,6 @@ class Router {
         settings: settings,
       );
     }
-    if (route.contains('/apps')) {
-      final id = route.replaceAll('/apps/', '');
-      return MaterialPageRoute(
-        builder: (_) => AppCheck(route: id),
-        settings: settings,
-      );
-    }
     return MaterialPageRoute(
       builder: (_) => HomeScreen(),
       settings: settings,
@@ -43,7 +34,6 @@ class Router {
       HomeScreen.routeName: (_) => HomeScreen(),
       AboutScreen.routeName: (_) => AboutScreen(),
       PrivacyPolicy.routeName: (_) => PrivacyPolicy(),
-      AppsScreen.routeName: (_) => AppsScreen(),
       BlogScreen.routeName: (_) => BlogScreen(),
       ProjectsScreen.routeName: (_) => ProjectsScreen(),
     };

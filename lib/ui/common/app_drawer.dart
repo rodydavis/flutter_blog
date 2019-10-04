@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../data/utils/constants.dart';
 import '../../generated/i18n.dart';
-import '../apps/screen.dart';
 import '../auth/admin_check.dart';
 import '../blog/screen.dart';
 import '../home/screen.dart';
@@ -101,12 +100,7 @@ class _AppDrawerState extends State<AppDrawer> with RouteAware {
                         //     : null,
                         selected: _selectedRoute == BlogScreen.routeName,
                       ),
-                      ListTile(
-                        leading: !_showIcon ? null : Icon(Icons.apps),
-                        title: Text(I18n.of(context).appsTitle),
-                        onTap: () => _navigateTo(context, AppsScreen.routeName),
-                        selected: _selectedRoute == AppsScreen.routeName,
-                      ),
+
                       // ListTile(
                       //   leading: Icon(Icons.folder),
                       //   title: Text(I18n.of(context).projectsTitle),
